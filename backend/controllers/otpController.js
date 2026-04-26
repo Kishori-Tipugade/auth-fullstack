@@ -24,6 +24,7 @@ const client = twilio(
 
 // 🚀 SEND OTP
 exports.sendOtp = async (req, res) => {
+  console.log("RECEIVED OTP REQUEST:", req.body);
   const { identifier, method } = req.body;
 
   if (!identifier || !method) {
