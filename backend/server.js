@@ -31,6 +31,12 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
+/* CATCH-ALL FOR DEBUGGING */
+app.use((req, res) => {
+  console.log("UNHANDLED REQUEST:", req.method, req.path);
+  res.status(404).send(`Route ${req.method} ${req.path} not found on this server`);
+});
+
 /* GLOBAL ERROR HANDLER */
 app.use((err, req, res, next) => {
   console.error("SERVER ERROR:", err);
