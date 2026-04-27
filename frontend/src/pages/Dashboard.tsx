@@ -134,8 +134,10 @@ export default function Dashboard() {
         <h3 className="section-title">Personal Information</h3>
         <div className="info-grid">
           <div className="form-group">
-            <label className="form-label">Full Name</label>
+            <label className="form-label" htmlFor="fullName">Full Name</label>
             <input
+              id="fullName"
+              name="fullName"
               type="text"
               className="form-input"
               value={isEditing ? formData.name : user.name}
@@ -145,8 +147,10 @@ export default function Dashboard() {
           </div>
 
           <div className="form-group">
-            <label className="form-label">Email Address</label>
+            <label className="form-label" htmlFor="emailAddress">Email Address</label>
             <input
+              id="emailAddress"
+              name="emailAddress"
               type="email"
               className="form-input"
               value={user.email}
@@ -155,8 +159,10 @@ export default function Dashboard() {
           </div>
 
           <div className="form-group">
-            <label className="form-label">Mobile Number</label>
+            <label className="form-label" htmlFor="mobileNumber">Mobile Number</label>
             <input
+              id="mobileNumber"
+              name="mobileNumber"
               type="text"
               className="form-input"
               value={isEditing ? formData.mobile : user.mobile}
@@ -207,8 +213,10 @@ export default function Dashboard() {
           <div style={{ animation: 'slideUp 0.3s ease-out' }}>
             <h3 className="section-title">Change Password</h3>
             <div className="form-group">
-              <label className="form-label">Old Password</label>
+              <label className="form-label" htmlFor="oldPassword">Old Password</label>
               <input
+                id="oldPassword"
+                name="oldPassword"
                 type="password"
                 className="form-input"
                 placeholder="Enter current password"
@@ -217,8 +225,10 @@ export default function Dashboard() {
               />
             </div>
             <div className="form-group">
-              <label className="form-label">New Password</label>
+              <label className="form-label" htmlFor="newPassword">New Password</label>
               <input
+                id="newPassword"
+                name="newPassword"
                 type="password"
                 className="form-input"
                 placeholder="Enter new password"
@@ -227,8 +237,10 @@ export default function Dashboard() {
               />
             </div>
             <div className="form-group">
-              <label className="form-label">Confirm New Password</label>
+              <label className="form-label" htmlFor="confirmPassword">Confirm New Password</label>
               <input
+                id="confirmPassword"
+                name="confirmPassword"
                 type="password"
                 className="form-input"
                 placeholder="Confirm new password"
