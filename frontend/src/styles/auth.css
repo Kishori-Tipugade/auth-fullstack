@@ -186,76 +186,161 @@ body {
 /* ===== DASHBOARD ===== */
 .dashboard-card {
   width: 100%;
-  max-width: 520px;
+  max-width: 560px;
   background: #ffffff;
-  padding: 30px;
-  border-radius: 14px;
+  padding: 32px;
+  border-radius: 16px;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .dashboard-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+  gap: 12px;
 }
 
 .dashboard-title {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
 }
 
 /* ===== AVATAR ===== */
+.avatar-container {
+  position: relative;
+  margin-bottom: 8px;
+}
+
 .avatar-circle {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: #4f46e5;
+  background: linear-gradient(135deg, #4f46e5, #818cf8);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
+  font-size: 28px;
+  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.2);
+  border: 4px solid #fff;
 }
 
-.avatar-circle.large {
-  width: 70px;
-  height: 70px;
-  font-size: 26px;
-}
-
-/* ===== INFO GRID ===== */
-.info-grid {
-  display: grid;
-  gap: 14px;
-  margin-bottom: 24px;
-}
-
-.info-card {
-  padding: 14px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  background: #f9fafb;
+/* ===== ACTION BUTTONS ===== */
+.action-buttons {
   display: flex;
-  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
 }
 
-.info-label {
-  font-size: 12px;
-  color: #6b7280;
-}
-
-.info-value {
-  font-size: 14px;
+.edit-btn {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 10px 20px;
+  border-radius: 8px;
   font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+  flex: 1;
+}
+
+.edit-btn:hover {
+  background: #e5e7eb;
+}
+
+.save-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+  flex: 1;
+}
+
+.save-btn:hover {
+  background: #4338ca;
+}
+
+.cancel-btn {
+  background: #ffffff;
+  color: #ef4444;
+  border: 1px solid #fee2e2;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+  flex: 1;
+}
+
+.cancel-btn:hover {
+  background: #fef2f2;
+}
+
+/* ===== SECTION TITLES ===== */
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 32px 0 16px;
   color: #111827;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== MESSAGES ===== */
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.alert-success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #d1fae5;
+}
+
+.alert-error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fee2e2;
+}
+
+/* ===== INPUTS IN EDIT MODE ===== */
+.form-input:disabled {
+  background: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+  border-color: #f3f4f6;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 480px) {
   .auth-card,
   .dashboard-card {
-    padding: 20px;
+    padding: 24px 20px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
   }
 }
